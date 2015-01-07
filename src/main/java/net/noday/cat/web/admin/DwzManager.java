@@ -27,6 +27,7 @@ import java.util.Locale;
 import net.noday.cat.model.ext.Dwz;
 import net.noday.core.web.BaseController;
 
+
 //import org.apache.http.client.ClientProtocolException;
 //import org.apache.http.client.HttpClient;
 //import org.apache.http.client.ResponseHandler;
@@ -34,12 +35,13 @@ import net.noday.core.web.BaseController;
 //import org.apache.http.impl.client.BasicResponseHandler;
 //import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.log4j.Logger;
-import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.alibaba.fastjson.JSON;
 
 /**
  * cat DwzManager
@@ -72,8 +74,7 @@ public class DwzManager extends BaseController {
 			BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
 			String line = reader.readLine();
 			//{"longurl":"http:\/\/www.hao123.com\/","status":0,"tinyurl":"http:\/\/dwz.cn\/1RIKG"}
-			ObjectMapper mapper = new ObjectMapper();
-			Dwz dwz = mapper.readValue(line, Dwz.class);
+			Dwz dwz = JSON.parseObject(line, Dwz.class);
 			if (dwz.getStatus() == 0) {
 				responseData(m, dwz.getTinyurl());
 			} else {

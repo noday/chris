@@ -31,7 +31,6 @@ import net.noday.core.utils.Captcha;
 import net.noday.core.web.BaseController;
 
 import org.apache.shiro.authc.UsernamePasswordToken;
-import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -41,6 +40,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.alibaba.fastjson.JSON;
 
 /**
  * cat MainController
@@ -115,8 +116,9 @@ public class MainController extends BaseController {
 			BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
 			String line = reader.readLine();
 			//{"access_token":"840daa95c5758f04c516b3eca7e352e5","expires_in":7776000,"user_id":"960883","remind_in":7775270,"code":0}
-			ObjectMapper mapper = new ObjectMapper();
-			Duoshuo duoshuo = mapper.readValue(line, Duoshuo.class);
+//			ObjectMapper mapper = new ObjectMapper();
+//			Duoshuo duoshuo = mapper.readValue(line, Duoshuo.class);
+			Duoshuo duoshuo = JSON.parseObject(line, Duoshuo.class);
 			User u = securityDao.findUserByDuoshuo(duoshuo.getUser_id());
 			if (u != null) {
 				UsernamePasswordToken token = new UsernamePasswordToken(u.getName(), u.getPassword(), true);

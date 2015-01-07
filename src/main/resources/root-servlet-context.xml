@@ -40,7 +40,8 @@
 		</property>
 		<property name="defaultViews">
 			<list>
-				<bean class="org.springframework.web.servlet.view.json.MappingJacksonJsonView">
+				<bean class="net.noday.core.web.MappingFastjsonJsonView" />
+<!-- 				<bean class="org.springframework.web.servlet.view.json.MappingJacksonJsonView">
 					<property name="objectMapper">
 						<bean class="org.codehaus.jackson.map.ObjectMapper">
 							<property name="dateFormat">
@@ -51,7 +52,7 @@
 						</bean>
 					</property>
 				</bean>
-<!-- 				<bean class="org.springframework.web.servlet.view.xml.MarshallingView">
+				<bean class="org.springframework.web.servlet.view.xml.MarshallingView">
 					<property name="marshaller">
 						<bean class="org.springframework.oxm.xstream.XStreamMarshaller">
 							<property name="autodetectAnnotations" value="true" />
