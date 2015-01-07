@@ -36,6 +36,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller @RequestMapping("/articles")
 public class ArticleController extends BaseController {
 
+	@SuppressWarnings("unused")
 	private static Logger log = Logger.getLogger(ArticleController.class);
 	
 	@Autowired private ArticleService service;

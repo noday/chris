@@ -41,7 +41,6 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 public class SideDataInterceptor extends HandlerInterceptorAdapter {
 
 
-	@SuppressWarnings("unused")
 	@Autowired private TagService tagService;
 	@Autowired private ArticleService articleService;
 	@Autowired private LinkService linkService;

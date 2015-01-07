@@ -22,8 +22,8 @@ import java.util.Map;
 import javax.annotation.Resource;
 
 import net.noday.cat.event.ArticleSaveEvent;
-import net.noday.cat.model.Article;
-import net.noday.cat.model.ext.RhythmArticle;
+//import net.noday.cat.model.Article;
+//import net.noday.cat.model.ext.RhythmArticle;
 import net.noday.core.model.App;
 import net.noday.core.security.ShiroDbRealm.ShiroUser;
 
@@ -42,8 +42,8 @@ import org.apache.shiro.subject.Subject;
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Service;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.serializer.SerializerFeature;
+//import com.alibaba.fastjson.JSON;
+//import com.alibaba.fastjson.serializer.SerializerFeature;
 
 /**
  * cat DwzManager
@@ -65,9 +65,10 @@ public class ArticleSaveNotifier implements ApplicationListener<ArticleSaveEvent
     /**
      * URL of adding article to Rhythm.
      */
-    private static final String ADD_ARTICLE_URL = B3LOG_RHYTHM_ADDRESS + "/add-article.do";
+//    private static final String ADD_ARTICLE_URL = B3LOG_RHYTHM_ADDRESS + "/add-article.do";
 	@Override
 	public void onApplicationEvent(ArticleSaveEvent e) {
+		log.info("pass");
 		//https://github.com/b3log/b3log-symphony/blob/master/src/main/java/org/b3log/symphony/processor/ArticleProcessor.java
 		//https://github.com/b3log/b3log-solo/blob/master/core/src/main/java/org/b3log/solo/event/rhythm/ArticleSender.java
 //		System.out.println(e.getArticle().getTitle());
@@ -88,11 +89,11 @@ public class ArticleSaveNotifier implements ApplicationListener<ArticleSaveEvent
 //		}
 	}
 
-	private String toPostString(Article a) {
-		RhythmArticle obj = new RhythmArticle(a, getCfgs(), getUser().getLoginName());
-		String str = JSON.toJSONString(obj, SerializerFeature.UseSingleQuotes);
-		return str;
-	}
+//	private String toPostString(Article a) {
+//		RhythmArticle obj = new RhythmArticle(a, getCfgs(), getUser().getLoginName());
+//		String str = JSON.toJSONString(obj, SerializerFeature.UseSingleQuotes);
+//		return str;
+//	}
 
 	protected App getCfgs() {
 		return (App) appCache.get("cfg");

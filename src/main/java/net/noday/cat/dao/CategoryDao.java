@@ -36,6 +36,6 @@ public class CategoryDao {
 	@Autowired private NamedParameterJdbcTemplate namedJdbc;
 	
 	public void save(Category ca) {
-		String sql = "";
+//		String sql = "";
 	}
 }
