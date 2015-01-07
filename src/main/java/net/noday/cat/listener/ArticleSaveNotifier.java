@@ -15,8 +15,8 @@
  */
 package net.noday.cat.listener;
 
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
+//import java.io.IOException;
+//import java.io.UnsupportedEncodingException;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -27,13 +27,13 @@ import net.noday.cat.model.ext.RhythmArticle;
 import net.noday.core.model.App;
 import net.noday.core.security.ShiroDbRealm.ShiroUser;
 
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.ResponseHandler;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.BasicResponseHandler;
-import org.apache.http.impl.client.DefaultHttpClient;
+//import org.apache.http.client.ClientProtocolException;
+//import org.apache.http.client.HttpClient;
+//import org.apache.http.client.ResponseHandler;
+//import org.apache.http.client.methods.HttpPost;
+//import org.apache.http.entity.StringEntity;
+//import org.apache.http.impl.client.BasicResponseHandler;
+//import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.log4j.Logger;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.session.Session;
@@ -70,22 +70,22 @@ public class ArticleSaveNotifier implements ApplicationListener<ArticleSaveEvent
 	public void onApplicationEvent(ArticleSaveEvent e) {
 		//https://github.com/b3log/b3log-symphony/blob/master/src/main/java/org/b3log/symphony/processor/ArticleProcessor.java
 		//https://github.com/b3log/b3log-solo/blob/master/core/src/main/java/org/b3log/solo/event/rhythm/ArticleSender.java
-		System.out.println(e.getArticle().getTitle());
-		try {
-			Article a = e.getArticle();
-			HttpClient client = new DefaultHttpClient();
-			HttpPost post = new HttpPost(ADD_ARTICLE_URL);
-			post.setEntity(new StringEntity(toPostString(a), "UTF-8"));
-			ResponseHandler<String> responseHandler = new BasicResponseHandler();
-			String responseBody = client.execute(post, responseHandler);
-			log.info(responseBody);
-		} catch (UnsupportedEncodingException ex) {
-			log.error(ex.getMessage(), ex);
-		} catch (ClientProtocolException ex) {
-			log.error(ex.getMessage(), ex);
-		} catch (IOException ex) {
-			log.error(ex.getMessage(), ex);
-		}
+//		System.out.println(e.getArticle().getTitle());
+//		try {
+//			Article a = e.getArticle();
+//			HttpClient client = new DefaultHttpClient();
+//			HttpPost post = new HttpPost(ADD_ARTICLE_URL);
+//			post.setEntity(new StringEntity(toPostString(a), "UTF-8"));
+//			ResponseHandler<String> responseHandler = new BasicResponseHandler();
+//			String responseBody = client.execute(post, responseHandler);
+//			log.info(responseBody);
+//		} catch (UnsupportedEncodingException ex) {
+//			log.error(ex.getMessage(), ex);
+//		} catch (ClientProtocolException ex) {
+//			log.error(ex.getMessage(), ex);
+//		} catch (IOException ex) {
+//			log.error(ex.getMessage(), ex);
+//		}
 	}
 
 	private String toPostString(Article a) {

@@ -29,7 +29,7 @@ import javax.imageio.stream.ImageInputStream;
 
 import org.apache.shiro.session.Session;
 
-import org.apache.commons.lang.RandomStringUtils;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
 
 /**
