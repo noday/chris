@@ -12,13 +12,13 @@
             http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd" >
         
 <!-- 扫描注解管理bean -->
-	<context:property-placeholder location="classpath:jdbc.properties"/>
+	<context:property-placeholder location="classpath:jdbc.properties" system-properties-mode="ENVIRONMENT"/>
 	
  	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close"> 
 		<!--  基本属性 url、user、password -->
-		<property name="url" value="${jdbc_url}" />
-		<property name="username" value="${jdbc_user}" />
-		<property name="password" value="${jdbc_password}" />
+		<property name="url" value="jdbc:mysql://${MOPAAS_MYSQL20072_HOST}:${MOPAAS_MYSQL20072_PORT}/${MOPAAS_MYSQL20072_NAME}?useUnicode=true&amp;characterEncoding=UTF-8" />
+		<property name="username" value="${MOPAAS_MYSQL20072_USERNAME}" />
+		<property name="password" value="${MOPAAS_MYSQL20072_PASSWORD}" />
 		<!-- 配置初始化大小、最小、最大 -->
 		<property name="initialSize" value="1" />
 		<property name="minIdle" value="1" /> 
