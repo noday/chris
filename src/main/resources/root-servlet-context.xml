@@ -34,8 +34,8 @@
 			<map>
 				<entry key="html" value="text/html" />
 				<entry key="json" value="application/json" />
-				<entry key="xml" value="application/xml" />
-				<entry key="atom" value="application/atom+xml" />
+				<!-- <entry key="xml" value="application/xml" />
+				<entry key="atom" value="application/atom+xml" /> -->
 			</map>
 		</property>
 		<property name="defaultViews">
@@ -51,13 +51,13 @@
 						</bean>
 					</property>
 				</bean>
-				<bean class="org.springframework.web.servlet.view.xml.MarshallingView">
+<!-- 				<bean class="org.springframework.web.servlet.view.xml.MarshallingView">
 					<property name="marshaller">
 						<bean class="org.springframework.oxm.xstream.XStreamMarshaller">
 							<property name="autodetectAnnotations" value="true" />
 						</bean>
 					</property>
-				</bean>
+				</bean> -->
 			</list>
 		</property>
 		<!-- <property name="viewResolvers" > <list> <bean class="org.springframework.web.servlet.view.BeanNameViewResolver" 
