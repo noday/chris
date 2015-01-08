@@ -25,7 +25,7 @@ import org.apache.commons.codec.binary.Hex;
 import org.apache.commons.lang3.StringEscapeUtils;
 
 /**
- * cat Encodes
+ * chris Encodes
  *
  * @author <a href="http://www.noday.net">Noday</a>
  * @version , 2013-2-8

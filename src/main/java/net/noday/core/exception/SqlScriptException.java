@@ -16,7 +16,7 @@
 package net.noday.core.exception;
 
 /**
- * cat SqlScriptException
+ * chris SqlScriptException
  *
  * @author <a href="http://www.noday.net">Noday</a>
  * @version , 2012-12-17

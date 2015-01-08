@@ -44,7 +44,7 @@ import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
- * cat BaseController
+ * chris BaseController
  *
  * @author <a href="http://www.noday.net">Noday</a>
  * @version , 2012-12-25

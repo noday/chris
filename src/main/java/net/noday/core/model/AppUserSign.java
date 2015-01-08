@@ -18,7 +18,7 @@ package net.noday.core.model;
 import java.io.Serializable;
 
 /**
- * cat AppUserSign
+ * chris AppUserSign
  *
  * @author <a href="http://www.noday.net">Noday</a>
  * @version , 2013-1-3

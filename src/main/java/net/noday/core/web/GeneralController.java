@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 /**
- * cat GeneralController
+ * chris GeneralController
  * 增删改查抽象类，限定了url到方法。
  * 子类方法不用再配置映射注解，但参数中需要配置@PathVariable和@Valid
  * 方法返回值为String，配合ContentNegotiatingViewResolver使用既可以返回html又可以处理json和……

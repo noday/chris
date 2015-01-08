@@ -23,16 +23,17 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
-import net.noday.cat.dao.TagDao;
-import net.noday.cat.model.Tag;
+import net.noday.chris.dao.TagDao;
+import net.noday.chris.model.Tag;
 import net.noday.core.dao.AppDao;
 import net.noday.core.model.App;
+
 import org.apache.log4j.Logger;
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
 /**
- * cat StartupListener
+ * chris StartupListener
  *
  * @author <a href="http://www.noday.net">Noday</a>
  * @version , 2012-10-20

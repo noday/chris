@@ -33,7 +33,7 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * cat Captcha
+ * chris Captcha
  *
  * @author <a href="http://www.noday.net">Noday</a>
  * @version , 2012-11-24

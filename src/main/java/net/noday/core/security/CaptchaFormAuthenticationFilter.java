@@ -23,7 +23,7 @@ import org.apache.shiro.web.filter.authc.FormAuthenticationFilter;
 import org.apache.shiro.web.util.WebUtils;
 
 /**
- * cat CaptchaFormAuthenticationFilter
+ * chris CaptchaFormAuthenticationFilter
  *
  * @author <a href="http://www.noday.net">Noday</a>
  * @version , 2012-10-28

@@ -22,7 +22,7 @@ import java.io.Serializable;
 
 import javax.annotation.PostConstruct;
 
-import net.noday.cat.model.User;
+import net.noday.chris.model.User;
 import net.noday.core.security.CaptchaUsernamePasswordToken;
 import net.noday.core.security.IncorrectCaptchaException;
 import net.noday.core.service.SecurityService;
@@ -51,7 +51,7 @@ import org.apache.shiro.subject.Subject;
 import org.apache.shiro.util.ByteSource;
 
 /**
- * cat ShiroDbRealm
+ * chris ShiroDbRealm
  *
  * @author <a href="http://www.noday.net">Noday</a>
  * @version , 2012-11-24

@@ -18,7 +18,7 @@ package net.noday.core.dao;
 //import java.lang.reflect.ParameterizedType;
 
 /**
- * cat BaseDao
+ * chris BaseDao
  *
  * @author <a href="http://www.noday.net">Noday</a>
  * @version , 2013-1-3

@@ -20,7 +20,7 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- * cat App
+ * chris App
  *
  * @author <a href="http://www.noday.net">Noday</a>
  * @version , 2012-11-24

@@ -2,11 +2,11 @@
 <web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" metadata-complete="false">
 	
-	<display-name>cat</display-name>
+	<display-name>chris</display-name>
 	
 	<context-param>
 		<param-name>webAppRootKey</param-name>
-		<param-value>cat.root</param-value>
+		<param-value>chris.root</param-value>
 	</context-param>
 	
 	<context-param>

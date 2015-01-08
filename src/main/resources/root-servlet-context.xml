@@ -10,7 +10,7 @@
 
 	<mvc:default-servlet-handler />
 
-	<context:component-scan base-package="net.noday.core.web,net.noday.cat.web">
+	<context:component-scan base-package="net.noday.core.web,net.noday.chris.web">
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>
 	<!-- 扫描controller 可以配置多个包 DefaultAnnotationHandlerMapping和AnnotationMethodHandlerAdapter分别处理类级别和 
@@ -117,7 +117,7 @@
 	<mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/**"/>
-			<bean class="net.noday.cat.interceptor.SideDataInterceptor" />
+			<bean class="net.noday.chris.interceptor.SideDataInterceptor" />
 		</mvc:interceptor>
 	</mvc:interceptors>
 

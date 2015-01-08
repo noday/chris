@@ -18,7 +18,7 @@ package net.noday.core.security;
 import org.apache.shiro.authc.AuthenticationException;
 
 /**
- * cat IncorrectCaptchaException
+ * chris IncorrectCaptchaException
  *
  * @author <a href="http://www.noday.net">Noday</a>
  * @version , 2012-10-28

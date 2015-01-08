@@ -36,7 +36,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.util.FileCopyUtils;
 
 /**
- * cat AppDao
+ * chris AppDao
  *
  * @author <a href="http://www.noday.net">Noday</a>
  * @version , 2012-11-24
@@ -51,7 +51,7 @@ public class AppDao {
 	
 	public void initDB() {
 		// TODO 也许要加上数据库类型判断
-		executeSql("cat.sql");
+		executeSql("chris.sql");
 	}
 	public void updateDB(String version) {
 		executeSql("db/update"+version+".sql");

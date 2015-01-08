@@ -5,7 +5,7 @@
   <artifactId>chris</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
-  <name>cat Maven Webapp</name>
+  <name>chris Maven Webapp</name>
   <url>http://maven.apache.org</url>
 	<properties>
 		<version.spring>3.1.3.RELEASE</version.spring>
@@ -174,7 +174,7 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<finalName>cat</finalName>
+		<finalName>chris</finalName>
 		<plugins>
 			<plugin>
 				<artifactId>maven-war-plugin</artifactId>

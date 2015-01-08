@@ -16,7 +16,7 @@
 package net.noday.core.enumeration;
 
 /**
- * cat Gender
+ * chris Gender
  *
  * @author <a href="http://www.noday.net">Noday</a>
  * @version , 2012-10-26

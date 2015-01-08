@@ -21,7 +21,7 @@ import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 
 /**
- * cat AppWebInfo
+ * chris AppWebInfo
  *
  * @author <a href="http://www.noday.net">Noday</a>
  * @version , 2012-12-22

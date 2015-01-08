@@ -17,7 +17,7 @@ package net.noday.core.security;
 
 import java.util.List;
 
-import net.noday.cat.model.User;
+import net.noday.chris.model.User;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +34,7 @@ import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
 /**
- * cat SecurityDao
+ * chris SecurityDao
  *
  * @author <a href="http://www.noday.net">Noday</a>
  * @version , 2012-10-24

@@ -18,7 +18,7 @@ package net.noday.core.utils;
 import org.apache.shiro.util.ByteSource;
 
 /**
- * cat Captcha
+ * chris Captcha
  *
  * @author <a href="http://www.noday.net">Noday</a>
  * @version , 2012-01-05

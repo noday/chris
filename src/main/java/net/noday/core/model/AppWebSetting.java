@@ -20,7 +20,7 @@ import java.io.Serializable;
 import javax.validation.constraints.Max;
 
 /**
- * cat AppWebSetting
+ * chris AppWebSetting
  *
  * @author <a href="http://www.noday.net">Noday</a>
  * @version , 2012-12-22

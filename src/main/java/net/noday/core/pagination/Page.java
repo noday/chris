@@ -18,7 +18,7 @@ package net.noday.core.pagination;
 import java.util.List;
 
 /**
- * cat Page
+ * chris Page
  *
  * @author <a href="http://www.noday.net">Noday</a>
  * @version , 2012-10-27

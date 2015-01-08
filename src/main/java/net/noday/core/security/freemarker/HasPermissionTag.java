@@ -16,7 +16,7 @@
 package net.noday.core.security.freemarker;
 
 /**
- * cat HasPermissionTag
+ * chris HasPermissionTag
  *
  * @author <a href="http://www.noday.net">Noday</a>
  * @version , 2013-2-8
