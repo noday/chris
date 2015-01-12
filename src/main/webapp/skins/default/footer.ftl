@@ -51,3 +51,13 @@ $(function() {
 });
 </script>
 <div style="display: none;">${cfg.hiddenSource}</div>
+<style type="text/css">
+.qcloud {
+	display: inline-block;
+	height: 50px;
+	background: url(http://code.csdn.net/assets/tencent_logo-9fc4bdf17c139b8880f4eff431830c5f.png) no-repeat;
+	vertical-align: middle;
+	margin: -10px 0px 0 0px;
+	width: 130px;
+	background-position: -190px 0px;
+}

@@ -82,6 +82,8 @@
 						<a class="thumbnail">
 							<img src="http://www.oschina.net/img/logo.gif" alt="">
 						</a>
+						<a class="thumbnail .qcloud">
+						</a>
 					</div>
 	        	</li>
 	        	<#--
