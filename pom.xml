@@ -172,6 +172,11 @@
 			<artifactId>fastjson</artifactId>
 			<version>1.2.3</version>
 		</dependency>
+		<dependency>
+			<groupId>com.qiniu</groupId>
+			<artifactId>sdk</artifactId>
+			<version>[6.1.7, 6.999]</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>chris</finalName>
