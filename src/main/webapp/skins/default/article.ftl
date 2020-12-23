@@ -45,9 +45,6 @@
 							<span class="bds_more">分享到：</span>
 							<a class="bds_qzone">QQ空间</a>
 							<a class="bds_tsina">新浪微博</a>
-							<a class="bds_tqq">腾讯微博</a>
-							<a class="bds_renren">人人网</a>
-							<a class="bds_t163">网易微博</a>
 							<a class="shareCount"></a>
 						</div>
 					</div>
