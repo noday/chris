@@ -9,6 +9,12 @@ chris is a blog system with java
 ## 使用库/lib
 java
 spring framework
+druid
+freemarker
+apache-commons
+shiro
+fastjson
+mysql
 ## 界面截图/snapshot
 ![demo](http://static.oschina.net/uploads/space/2012/1230/173438_ROJU_147849.jpg)
 ## 其他开源项目/my open source
