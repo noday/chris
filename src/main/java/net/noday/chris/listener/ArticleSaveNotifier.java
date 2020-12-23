@@ -70,6 +70,7 @@ public class ArticleSaveNotifier implements ApplicationListener<ArticleSaveEvent
 	@Override
 	public void onApplicationEvent(ArticleSaveEvent e) {
 		log.info("pass");
+		// 文章同步到第三方平台功能
 		//https://github.com/b3log/b3log-symphony/blob/master/src/main/java/org/b3log/symphony/processor/ArticleProcessor.java
 		//https://github.com/b3log/b3log-solo/blob/master/core/src/main/java/org/b3log/solo/event/rhythm/ArticleSender.java
 //		System.out.println(e.getArticle().getTitle());
