@@ -38,7 +38,6 @@
 	                <li><a href="http://www.noday.net" target="_blank">我的博客</a></li>
 	                <li><a href="http://symphony.b3log.org" target="_blank">B3log社区</a></li>
                     <li class="nav-header">微博</li>
-                    <li><a href="#">腾讯微博</a></li>
                     <li><a href="#">新浪微博</a></li>
                     <li class="divider"></li>
                     <li class="nav-header">空间</li>
