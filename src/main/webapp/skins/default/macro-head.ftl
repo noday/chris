@@ -5,7 +5,7 @@
 <meta name="author" content="noday" />
 <meta name="generator" content="noday" />
 <meta name="copyright" content="noday" />
-<meta name="revised" content="noday, 2012" />
+<meta name="revised" content="noday, 2020" />
 <meta http-equiv="Window-target" content="_top" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="${contextPath}/css/bootstrap.min.css" rel="stylesheet"/>
