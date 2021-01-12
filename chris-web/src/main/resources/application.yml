@@ -1,0 +1,32 @@
+# 应用名称
+spring:
+  application:
+    name: chris
+  #指定freemarker的模板路径和模板的后缀
+  freemarker:
+    template-loader-paths: classpath:/skins/#{appCache.cfg.skin}/,/WEB-INF/ftl/
+    defaultEncoding: UTF-8
+    suffix: .ftl
+    # 指定字符集
+    charset: utf-8
+    # 指定是否要启用缓存
+    cache: false
+    #指定是否要暴露请求和会话属性
+    expose-request-attributes: true
+    expose-session-attributes: true
+    settings: 
+      locale: zh_CN
+      default_encoding: UTF-8
+      url_escaping_charset: UTF-8
+      boolean_format: true,false
+      whitespace_stripping: true
+      number_format: #
+      date_format: yyyy-MM-dd
+      time_format: HH:mm:ss
+      datetime_format: yyyy-MM-dd HH:mm:ss
+      template_update_delay: 0
+      classic_compatible: true
+    variables: 
+      shiro: net.noday.core.security.freemarker.ShiroTags
+  # spring 静态资源扫描路径
+  resources.static-locations: classpath:/static/
