@@ -4,7 +4,8 @@ spring:
     name: chris
   #指定freemarker的模板路径和模板的后缀
   freemarker:
-    template-loader-paths: classpath:/skins/#{appCache.cfg.skin}/,/WEB-INF/ftl/
+    # template-loader-path: classpath:/static/skins/#{appCache.cfg.skin}/,classpath:/templates/ftl/
+    template-loader-path: classpath:/static/skins/default/,classpath:/templates/ftl/
     defaultEncoding: UTF-8
     suffix: .ftl
     # 指定字符集
@@ -26,8 +27,6 @@ spring:
       datetime_format: yyyy-MM-dd HH:mm:ss
       template_update_delay: 0
       classic_compatible: true
-    variables: 
-      shiro: net.noday.core.security.freemarker.ShiroTags
   # spring 静态资源扫描路径
   resources.static-locations: classpath:/static/
 shiro:

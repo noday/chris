@@ -32,14 +32,17 @@ import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.LockedAccountException;
 import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.authz.AuthorizationException;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.http.HttpStatus;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -137,4 +140,17 @@ public abstract class BaseController {
 		responseMsg(m, false, e.getMessage());
 		return m;
 	}
+    @ExceptionHandler(AuthorizationException.class)
+    @ResponseStatus(HttpStatus.FORBIDDEN)
+    public Model handleException(AuthorizationException e, Model model) {
+
+        // you could return a 404 here instead (this is how github handles 403, so the user does NOT know there is a
+        // resource at that location)
+        log.debug("AuthorizationException was thrown", e);
+
+        model.addAttribute("status", HttpStatus.FORBIDDEN.value());
+        model.addAttribute("message", "No message available");
+
+        return model;
+    }
 }

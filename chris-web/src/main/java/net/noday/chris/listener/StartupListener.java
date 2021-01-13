@@ -30,6 +30,7 @@ import net.noday.core.model.App;
 
 import org.apache.log4j.Logger;
 import org.springframework.context.ApplicationContext;
+import org.springframework.stereotype.Component;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
 /**
@@ -39,6 +40,7 @@ import org.springframework.web.context.support.WebApplicationContextUtils;
  * @version , 2012-10-20
  * @since 
  */
+@Component
 public class StartupListener implements ServletContextListener {
 	
 	private static Logger log = Logger.getLogger(StartupListener.class);

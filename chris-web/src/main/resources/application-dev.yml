@@ -5,7 +5,29 @@ server:
 #数据源配置
 spring:
   datasource:
-    url: jdbc:mysql://10.3.50.168:3306/chris?useUnicode=true&characterEncoding=UTF-8
-    username: root
-    password: 12345678
-
+    druid: 
+      url: jdbc:mysql://10.3.50.168:3306/chris?useUnicode=true&characterEncoding=UTF-8
+      username: root
+      password: 12345678
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      # 连接池配置
+      initialSize: 10
+      maxActive: 20
+      maxWait: 60000
+      minIdle: 1
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      testWhileIdle: true
+      testOnBorrow: true
+      testOnReturn: false
+      poolPreparedStatements: true
+      maxOpenPreparedStatements: 20
+      validationQuery: SELECT 1
+      validation-query-timeout: 500
+      filters: stat
+      # 监控
+      stat-view-servlet.enabled: true
+      stat-view-servlet.url-pattern: /druid/*
+      stat-view-servlet.reset-enable: true
+      stat-view-servlet.login-username: admin
+      stat-view-servlet.login-password: admin

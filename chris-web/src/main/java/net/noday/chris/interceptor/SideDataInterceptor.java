@@ -29,6 +29,7 @@ import net.noday.core.model.App;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.web.servlet.AsyncHandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
@@ -40,7 +41,7 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
  * @since 
  */
 @Component
-public class SideDataInterceptor extends HandlerInterceptorAdapter {
+public class SideDataInterceptor implements AsyncHandlerInterceptor {
 
 
 	@Autowired private TagService tagService;
@@ -61,7 +62,7 @@ public class SideDataInterceptor extends HandlerInterceptorAdapter {
 			modelAndView.addObject("links", linkService.findAll());
 			modelAndView.addObject("navs", navService.findAll());
 		}
-		super.postHandle(request, response, handler, modelAndView);
+//		super.postHandle(request, response, handler, modelAndView);
 	}
 	protected App getCfgs() {
 		return (App) appCache.get("cfg");
