@@ -30,3 +30,8 @@ spring:
       shiro: net.noday.core.security.freemarker.ShiroTags
   # spring 静态资源扫描路径
   resources.static-locations: classpath:/static/
+shiro:
+  loginUrl: /login
+  userNativeSessionManager: true
+  sessionManager:
+    sessionIdUrlRewritingEnabled: false
