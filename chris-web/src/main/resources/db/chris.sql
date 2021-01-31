@@ -171,4 +171,4 @@ ALTER TABLE `user_role`
 ALTER TABLE `user_role`  
   ADD CONSTRAINT `user_role_ibfk_2` FOREIGN KEY (`role_id`) REFERENCES `role` (`id`);
   
-insert  into `user`(`id`,`email`,`password`,`name`,`sex`,`organization`,`visits`,`downloads`,`regist_time`,`regist_ip`,`last_time`,`last_ip`,`status`,`salt`,`role`,`duoshuo_id`) values (2,'test@noday.net','oQ47tb3jsc5O7FXgwh9c8ooA3wim1ordd7WufSDyL44=','admin',NULL,NULL,0,0,'2012-11-05 12:28:07','127.0.0.1',NULL,NULL,1,'IFzq+C4ZaU4=','admin',NULL);
+insert  into `user`(`id`,`email`,`password`,`name`,`sex`,`organization`,`visits`,`downloads`,`regist_time`,`regist_ip`,`last_time`,`last_ip`,`status`,`salt`,`role`,`duoshuo_id`) values (2,'test@noday.net','Za71iPRKOkQcBkHhujI3CFwKIYTdagARJl5b92Iu8v0=','admin',NULL,NULL,0,0,'2012-11-05 12:28:07','127.0.0.1',NULL,NULL,1,'GD+GV3h1bAs=','admin',NULL);
