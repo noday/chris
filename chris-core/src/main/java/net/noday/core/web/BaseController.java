@@ -25,7 +25,6 @@ import net.noday.core.security.SecurityDao;
 import net.noday.core.security.ShiroDbRealm;
 import net.noday.core.security.ShiroDbRealm.ShiroUser;
 
-import org.apache.log4j.Logger;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.IncorrectCredentialsException;
@@ -55,8 +54,6 @@ import org.springframework.web.servlet.ModelAndView;
  */
 public abstract class BaseController {
 
-	protected Logger log = Logger.getLogger(getClass());
-	
 	@Autowired protected SecurityDao securityDao;
 	@Resource protected Map<String, Object> appCache;
 	@Autowired protected ShiroDbRealm realm;
@@ -127,14 +124,12 @@ public abstract class BaseController {
 	
 	@ExceptionHandler
 	public ModelAndView resolveException(EmptyResultDataAccessException e, WebRequest req) {
-		log.error(e.getMessage(), e);
 		ModelAndView m = new ModelAndView("error/404");
 		responseMsg(m, false, e.getMessage());
 		return m;
 	}
 	@ExceptionHandler
 	public ModelAndView resolveException(Exception e, WebRequest req) {
-		log.error(e.getMessage(), e);
 		ModelAndView m = new ModelAndView("error/500");
 		m.addObject("href", req.getHeader("referer"));
 		responseMsg(m, false, e.getMessage());
@@ -146,7 +141,6 @@ public abstract class BaseController {
 
         // you could return a 404 here instead (this is how github handles 403, so the user does NOT know there is a
         // resource at that location)
-        log.debug("AuthorizationException was thrown", e);
 
         model.addAttribute("status", HttpStatus.FORBIDDEN.value());
         model.addAttribute("message", "No message available");
