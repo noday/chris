@@ -79,9 +79,9 @@
 	        	<li class="nav-header">感谢</li>
 	        	<li>
 					<div class="media">
-						<a href="http://www.qcloud.com/" target="_blank" class="thumbnail" style="display: inline-block;height: 50px;background: url(http://code.csdn.net/assets/tencent_logo-9fc4bdf17c139b8880f4eff431830c5f.png) no-repeat;vertical-align: middle;margin: 10px 0px 0 0px;width: 130px;background-position: -190px 0px;">
+						<a href="http://www.1024hreo.com/" target="_blank" class="thumbnail" style="display: inline-block;height: 50px;background: url(${contextPath}/img/logo.jpg) no-repeat;vertical-align: middle;margin: 10px 0px 0 0px;width: 130px;background-position: -190px 0px;">
 						</a>
-						<a href="http://code.csdn.net/" target="_blank" class="thumbnail"  style="display: inline-block;height: 50px;background: url(${contextPath}/img/logo-csdncode.jpg) no-repeat;vertical-align: middle;margin: 10px 0px 0 0px;panding: 10px 0px 0 0px;width: 130px;background-position: 3px 3px;"">
+						<a href="http://www.noday.net/" target="_blank" class="thumbnail"  style="display: inline-block;height: 50px;background: url(${contextPath}/img/logo.jpg) no-repeat;vertical-align: middle;margin: 10px 0px 0 0px;panding: 10px 0px 0 0px;width: 130px;background-position: 3px 3px;"">
 						</a>
 					</div>
 	        	</li>
