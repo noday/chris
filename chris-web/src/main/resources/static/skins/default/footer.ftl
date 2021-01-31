@@ -26,22 +26,8 @@
 <script src="${contextPath}/js/utils.js"></script>
 <script type="text/javascript">
 <#if (cfg.duoshuoKey)!""=="">
-<!-- Duoshuo Comment BEGIN -->
-	var duoshuoQuery = {
-		short_name:"${cfg.duoshuoKey}"
-		,sso:{
-			login:"${cfg.hostUrl}${contextPath}/dsLogin",
-			logout:"${cfg.hostUrl}${contextPath}/logout"
-		}
-	};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = 'http://static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		|| document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
+<!-- Duoshuo Comment is close -->
+<!-- 试试https://beaudar.lipk.org/ -->
 <!-- Duoshuo Comment END -->
 </#if>
 $(function() {
