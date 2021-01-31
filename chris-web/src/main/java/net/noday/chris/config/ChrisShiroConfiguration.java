@@ -15,6 +15,7 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import net.noday.chris.interceptor.SideDataInterceptor;
+import net.noday.core.security.CaptchaFormAuthenticationFilter;
 import net.noday.core.security.ShiroDbRealm;
 import net.noday.core.security.freemarker.ShiroTags;
 import net.noday.core.service.SecurityService;
@@ -28,6 +29,11 @@ public class ChrisShiroConfiguration implements WebMvcConfigurer {
 		ShiroDbRealm shiroDbRealm = new ShiroDbRealm();
 		shiroDbRealm.setService(service);
 		return shiroDbRealm;
+	}
+	
+	@Bean
+	public CaptchaFormAuthenticationFilter authc() {
+		return new CaptchaFormAuthenticationFilter();
 	}
 	
 	@Bean
