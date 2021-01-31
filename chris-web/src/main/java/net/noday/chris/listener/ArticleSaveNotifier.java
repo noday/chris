@@ -35,11 +35,12 @@ import net.noday.core.security.ShiroDbRealm.ShiroUser;
 //import org.apache.http.entity.StringEntity;
 //import org.apache.http.impl.client.BasicResponseHandler;
 //import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.log4j.Logger;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.subject.Subject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Service;
 
@@ -56,7 +57,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class ArticleSaveNotifier implements ApplicationListener<ArticleSaveEvent> {
 
-	private static final Logger log = Logger.getLogger(ArticleSaveNotifier.class);
+	private static final Logger log = LoggerFactory.getLogger(ArticleSaveNotifier.class);
 	
 	@Resource private Map<String, Object> appCache;
 	/**

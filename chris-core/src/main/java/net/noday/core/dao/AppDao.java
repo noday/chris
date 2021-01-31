@@ -23,7 +23,8 @@ import java.util.List;
 import net.noday.core.exception.AppStartupException;
 import net.noday.core.model.App;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
@@ -45,7 +46,7 @@ import org.springframework.util.FileCopyUtils;
 @Repository
 public class AppDao {
 	
-	private static final Logger log = Logger.getLogger(AppDao.class);
+	private static final Logger log = LoggerFactory.getLogger(AppDao.class);
 	
 	@Autowired private JdbcTemplate jdbc;
 	

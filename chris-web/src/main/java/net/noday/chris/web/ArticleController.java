@@ -18,7 +18,8 @@ package net.noday.chris.web;
 import net.noday.chris.service.ArticleService;
 import net.noday.core.web.BaseController;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -37,7 +38,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class ArticleController extends BaseController {
 
 	@SuppressWarnings("unused")
-	private static Logger log = Logger.getLogger(ArticleController.class);
+	private static Logger log = LoggerFactory.getLogger(ArticleController.class);
 	
 	@Autowired private ArticleService service;
 	

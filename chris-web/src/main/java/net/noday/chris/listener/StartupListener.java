@@ -28,7 +28,8 @@ import net.noday.chris.model.Tag;
 import net.noday.core.dao.AppDao;
 import net.noday.core.model.App;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.support.WebApplicationContextUtils;
@@ -43,7 +44,7 @@ import org.springframework.web.context.support.WebApplicationContextUtils;
 @Component
 public class StartupListener implements ServletContextListener {
 	
-	private static Logger log = Logger.getLogger(StartupListener.class);
+	private static Logger log = LoggerFactory.getLogger(StartupListener.class);
 
     private ServletContext context;
     private ApplicationContext ctx;

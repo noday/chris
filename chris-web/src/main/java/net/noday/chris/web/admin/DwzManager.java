@@ -27,15 +27,14 @@ import java.util.Locale;
 import net.noday.chris.model.ext.Dwz;
 import net.noday.core.web.BaseController;
 
-
-
+import org.slf4j.Logger;
 //import org.apache.http.client.ClientProtocolException;
 //import org.apache.http.client.HttpClient;
 //import org.apache.http.client.ResponseHandler;
 //import org.apache.http.client.methods.HttpPost;
 //import org.apache.http.impl.client.BasicResponseHandler;
 //import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.log4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -54,7 +53,7 @@ import com.alibaba.fastjson.JSON;
 @Controller @RequestMapping("/admin/tools/dwz")
 public class DwzManager extends BaseController {
 
-	private static Logger log = Logger.getLogger(DwzManager.class);
+	private static Logger log = LoggerFactory.getLogger(DwzManager.class);
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public String gen() {
