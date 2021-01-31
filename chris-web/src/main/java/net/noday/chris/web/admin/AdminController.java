@@ -24,9 +24,9 @@ import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  * chris AdminController
@@ -35,7 +35,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @version , 2012-11-24
  * @since 
  */
-@Controller @RequestMapping("/admin")
+@Controller
+@RequestMapping("/admin")
 public class AdminController extends BaseController {
 	
 //	private static final Logger log = Logger.getLogger(AdminController.class);
@@ -43,7 +44,7 @@ public class AdminController extends BaseController {
 	@Autowired private ArticleService service;
 	@Autowired private AppDao appDao;
 
-	@RequestMapping(method = RequestMethod.GET)
+	@GetMapping("/")
 	public String main() {
 		return "admin/index";
 	}
