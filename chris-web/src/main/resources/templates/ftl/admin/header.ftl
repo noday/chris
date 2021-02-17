@@ -70,7 +70,7 @@
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="label label-inverse"><@shiro.principal/></span><span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                    <li><a href="${contextPath}/admin">管理后台</a></li>
+                    <li><a href="${contextPath}/admin/articles">管理后台</a></li>
                     <li><a href="${contextPath}/logout">退出</a></li>
                     <li class="divider"></li>
                     <li><a href="#">清除本页缓存</a></li>
