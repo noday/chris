@@ -36,7 +36,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @since 
  */
 @Controller
-@RequestMapping("/admin")
+@RequestMapping("/admin/dashboard")
 public class AdminController extends BaseController {
 	
 //	private static final Logger log = Logger.getLogger(AdminController.class);
@@ -44,7 +44,7 @@ public class AdminController extends BaseController {
 	@Autowired private ArticleService service;
 	@Autowired private AppDao appDao;
 
-	@GetMapping("/")
+	@GetMapping
 	public String main() {
 		return "admin/index";
 	}
