@@ -8,3 +8,11 @@ spring:
     url: jdbc:mysql://rdsn9nu3529brazvsickj.mysql.rds.aliyuncs.com:3306/rdsn9nu3529brazvsickj?useUnicode=true&characterEncoding=UTF-8
     username: chris1943
     password: chris1943
+minio:
+  endpoint: http://10.3.50.16
+  port: 9000
+  accessKey: username
+  secretKey: password
+  secure: false
+  bucketName: chris001
+  url: https://ip:59999/oss-file/chris001/

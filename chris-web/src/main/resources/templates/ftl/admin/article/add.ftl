@@ -19,6 +19,10 @@
 			<div class="succ-toggle">
 				<form id="article-form" action='${contextPath}/admin/articles<#if (article.id)??>/${article.id}</#if>.json' method="post">
 					<div class="control-group">
+					<label class="control-label" for="source">抓取</label>
+					<input type="text" id="source" placeholder="文章地址" class="span9">
+					</div>
+					<div class="control-group">
 					<label class="control-label" for="title">标题</label>
 					<input type="text" name="title" placeholder="文章标题" value='${(article.title)!}' class="span9">
 					<span id="msg-title" class="help-block"></span>
@@ -109,6 +113,24 @@ KindEditor.ready(function(K) {
 				'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
 				'insertunorderedlist', '|', 'emoticons', 'image', 'flash', 'link','code','|','clearhtml','quickformat','source','about']
 		});
+});
+$("#source").blur(function(){
+	var source = $("#source").val();
+	if(source == "") {
+		return;
+	}
+	$.ajax({
+		type: "get",
+		contentType: "application/json;charset=UTF-8",
+		url: "${contextPath}/admin/articles/fork",
+		data: "url=" + encodeURIComponent(source),
+		success: function(data) {
+			editor.html(data.html);
+		},
+		error: function(e) {
+			
+		}
+	});
 });
 $('#article-form').ajaxForm({
 	dataType:"json",

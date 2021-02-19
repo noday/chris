@@ -21,12 +21,17 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URL;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
 import javax.validation.Valid;
 
+import net.noday.chris.config.MinioConfiguration;
 import net.noday.chris.model.Article;
 import net.noday.chris.model.ForkObj;
 import net.noday.chris.service.ArticleService;
@@ -51,6 +56,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import io.minio.MinioClient;
+import io.minio.ObjectWriteResponse;
+import io.minio.PutObjectArgs;
+import io.minio.errors.ErrorResponseException;
+import io.minio.errors.InsufficientDataException;
+import io.minio.errors.InternalException;
+import io.minio.errors.InvalidResponseException;
+import io.minio.errors.ServerException;
+import io.minio.errors.XmlParserException;
+
 /**
  * chris ArticleController
  *
@@ -64,6 +79,8 @@ public class ArticleManager extends GeneralController<Article, Long> {
 //	private static final Logger log = Logger.getLogger(ArticleManager.class);
 	
 	@Autowired private ArticleService service;
+	@Autowired private MinioClient minioClient;
+	@Autowired private MinioConfiguration minioConfig;
 	
 	@Override
 	public String create() {
@@ -117,7 +134,7 @@ public class ArticleManager extends GeneralController<Article, Long> {
 	
 	@GetMapping("/fork")
 	@ResponseBody
-	public Object fork(@RequestParam("url") String url) {
+	public Object fork(@RequestParam("url") String url) throws InvalidKeyException, ErrorResponseException, InsufficientDataException, InternalException, InvalidResponseException, NoSuchAlgorithmException, ServerException, XmlParserException {
 		List<String> images = new ArrayList<String>();
 		String html;
 		String title;
@@ -135,10 +152,18 @@ public class ArticleManager extends GeneralController<Article, Long> {
 				Response srcResp = Jsoup.connect(dataSrc).ignoreContentType(true).timeout(10000).execute();
 				BufferedInputStream srcStream = srcResp.bodyStream();
 				String imageFileName = getImageFileName(dataSrc, dataType);
-				File imgFile = new File(getImageFolder(), imageFileName);
-				imgFile.createNewFile();
-				FileUtils.copyInputStreamToFile(srcStream, imgFile);
-				String src = "img/" + imageFileName;
+				PutObjectArgs poa = PutObjectArgs.builder()
+						.bucket(minioConfig.getBucketName())
+						.object(imageFileName)
+						.contentType(srcResp.contentType())//"application/octet-stream"
+						.stream(srcStream, srcStream.available(), -1)
+						.build();
+				ObjectWriteResponse putResp = minioClient.putObject(poa);
+				putResp.object();
+//				File imgFile = new File(getImageFolder(), imageFileName);
+//				imgFile.createNewFile();
+//				FileUtils.copyInputStreamToFile(srcStream, imgFile);
+				String src = minioConfig.getUrl() + imageFileName;
 				img.attr("src", src);
 				img.removeAttr("data-src");
 				img.removeAttr("class");
@@ -161,7 +186,7 @@ public class ArticleManager extends GeneralController<Article, Long> {
 				dataType = dataSrc.substring(dataSrc.indexOf("wx_fmt=") + 7);
 			}
 		}
-		return UUID.randomUUID() + "." + dataType;
+		return LocalDate.now().format(DateTimeFormatter.BASIC_ISO_DATE) + "/" + UUID.randomUUID() + "." + dataType;
 	}
 	
 	private String getImageFolder() {
